@@ -1,6 +1,6 @@
 import { defineComponent } from 'vue';
-import useIndexStore from "@/store/index";
 import { storeToRefs } from "pinia";
+import useIndexStore from "@/store/index";
 
 export default defineComponent({
   setup(props, context) {
@@ -12,7 +12,7 @@ export default defineComponent({
     return () => (
       <>
         <p>这是首页</p>
-        <el-button onClick={add}>点击</el-button>
+        <el-button onClick={add}>点击测试pinia</el-button>
         <div>展示：{counter.value}</div>
       </>
     );

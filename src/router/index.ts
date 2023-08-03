@@ -4,19 +4,26 @@ import Home from '../App.tsx';
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/index',
-    name: 'Home',
-    component: Home
+    redirect: '/login',
+    name: 'home',
+    component: () => import('@/views/home'),
+    children: [
+      {
+        path: '/index',
+        name: 'index',
+        component: () => import('@/views/index')
+      },
+      {
+        path: '/test',
+        name: 'test',
+        component: () => import('@/views/test')
+      },
+    ]
   },
   {
-    path: '/index',
-    name: 'index',
-    component: () => import('@/views/index')
-  },
-  {
-    path: '/test',
-    name: 'test',
-    component: () => import('@/views/test')
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/login')
   }
 ];
 
