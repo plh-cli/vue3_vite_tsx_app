@@ -23,6 +23,8 @@ export default ({ mode }) => {
     server: {
       // 禁用或配置 HMR 连接
       hmr: true,
+      port: 5166,
+      host: '0.0.0.0',
       proxy: {
         "/api": {
           target: loadEnv(mode, process.cwd()).VITE_APP_BASE_URL,
